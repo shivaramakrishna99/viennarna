@@ -1,13 +1,7 @@
 FROM 812206152185.dkr.ecr.us-west-2.amazonaws.com/wf-base:fbe8-main
 
 # Download ViennaRNA
-RUN curl -O -L https://github.com/ViennaRNA/ViennaRNA/releases/download/v2.5.0/ViennaRNA-2.5.0.tar.gz &&\
-    tar -zxvf ViennaRNA-2.5.0.tar.gz &&\
-    cd ViennaRNA-2.5.0 &&\
-    ./configure &&\
-    make &&\
-    make install &&\
-    mv ViennaRNA-2.5.0 viennarna
+RUN python3 -m pip install ViennaRNA
 
 # Or use managed library distributions through the container OS's package
 # # manager.
